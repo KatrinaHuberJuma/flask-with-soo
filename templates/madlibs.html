@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block story %}
+    {{ person }} is singing in a very {{ adjective }} way about
+    {% for color in colors %} 
+        <span class={{color}}>{{color}},</span>
+    {% endfor %}
+
+     with a {{noun}} sitting in the Hackbright Lab..
+{% endblock %}
