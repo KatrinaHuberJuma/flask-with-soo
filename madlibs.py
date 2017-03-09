@@ -1,6 +1,6 @@
-from random import choice
+from random import choice, sample
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session
 
 
 # "__name__" is a special Python variable for the name of the current module
@@ -49,16 +49,20 @@ def show_madlib_form():
     else:
         return render_template("goodbye.html")
 
+
+
+
 @app.route('/madlib')
 def run_madlib():
 
-    color = request.args.get('color')
+    colors = request.args.getlist('colors')
     noun = request.args.get('noun')
     person = request.args.get('person')
     adjective = request.args.get('adjective')
 
+    rand_endpoint = choice(["madlibs"])
     # receive it and use the madlib.html to print it
-    return render_template('madlib.html', color=color,noun=noun,person=person,adjective=adjective)
+    return render_template(rand_endpoint + '.html', colors=colors,noun=noun,person=person,adjective=adjective)
 
 if __name__ == '__main__':
     # debug=True gives us error messages in the browser and also "reloads" our web app

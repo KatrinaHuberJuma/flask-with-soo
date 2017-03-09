@@ -1,0 +1,17 @@
+body {
+    margin: 0 auto;
+    width: 60%;
+    font-size: 60px;
+    font-style: italic; 
+}
+.red {
+    background-color: crimson;
+}
+.white {
+    background-color: aquamarine;
+    color: midnightblue;
+}
+.black {
+    background-color: black;
+    color: #fff;
+}
